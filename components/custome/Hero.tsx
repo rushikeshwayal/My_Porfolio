@@ -24,7 +24,7 @@ export default function Hero() {
         <div className=" w-[400px] " >
           <WordRotate
             className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-green-400"
-            words={["Rushikesh", "@Mantrix"]}
+            words={["Rushikesh", "AI-ML Engineer"]}
           />
         </div>
       </div>
