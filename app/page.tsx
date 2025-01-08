@@ -1,6 +1,6 @@
 import Hero from "@/components/custome/Hero";
 import { ModeToggle } from "@/components/custome/ModeToggle";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Home() {
   return (

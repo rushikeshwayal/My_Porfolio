@@ -4,7 +4,7 @@ import  { RainbowButton }  from '../ui/rainbow-button';
 import { cn } from "@/lib/utils";
 import GridPattern from "@/components/ui/grid-pattern";
 import NavBar from './NavBar';
-import ShinyButton from "@/components/ui/shiny-button";
+// import ShinyButton from "@/components/ui/shiny-button";
 export default function Hero() {
   return (
 
