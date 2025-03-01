@@ -19,7 +19,7 @@ export default function NavBar() {
           <BreadcrumbItem>
 
             <BreadcrumbLink>
-              <Link href="/">About</Link>
+              <Link href="#AboutMe">About</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
 

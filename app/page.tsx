@@ -1,3 +1,4 @@
+import AboutMe from "@/components/custome/AboutMe";
 import Hero from "@/components/custome/Hero";
 import { ModeToggle } from "@/components/custome/ModeToggle";
 import NumberCount from "@/components/custome/NumberCount";
@@ -9,8 +10,11 @@ export default function Home() {
     <div className="min-h-screen">
       
 <Hero />  
+
 <NumberCount />
 <TextRevel />
+<AboutMe /> 
+
       <div className="flex justify-start fixed bottom-4 left-4">
             <ModeToggle />
           </div>
