@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export default function NumberCount() {
 
     return (    
-        <div className="relative overflow-hidden font-glacial h-96 bg-gradient-to-t from-black to-transparent">
+        <div className="relative overflow-hidden font-glacial h-96 bg-gradient-to-t from-black  to-transparent">
             <div className="flex justify-around items-center  text-center w-full">
                 <div>
                 <p
