@@ -48,7 +48,7 @@ export default function NavBar() {
 
           <BreadcrumbItem>
             <BreadcrumbLink>
-              <Link href="skill">Skills</Link>
+              <Link href="#skill">Skills</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
 
