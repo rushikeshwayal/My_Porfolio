@@ -13,7 +13,12 @@ import { desc } from "framer-motion/client";
 
 export default function Projects() {
   const { theme } = useTheme();
-
+  interface Project {
+    title: string;
+    description?: string;
+    image?: string;
+    link?: string;
+  }
   const webProjects = [
     {
       title: "Pragati Track",
@@ -81,7 +86,7 @@ Enhanced execution by 40%, increased transparency by 60%, and reduced manual wor
     }
   ];
 
-  const renderCard = (project) => {
+  const renderCard = (project: Project) => {
     if (project.description && project.image) {
       return (
         <div className="flex flex-col bg-white dark:bg-black shadow-xl border border-slate-200 dark:border-slate-700 rounded-lg w-full h-[28rem] p-4">
@@ -119,7 +124,7 @@ Enhanced execution by 40%, increased transparency by 60%, and reduced manual wor
     }
   };
 
-  const renderCarousel = (title, projects) => (
+  const renderCarousel = (title: string, projects: Project[]) => (
     <div className="mb-16">
       <h1 className="pl-6 sm:pl-28 font-glacial font-bold text-3xl sm:text-4xl p-6 text-green-400 bg-clip-text">
         {title}
@@ -132,7 +137,7 @@ Enhanced execution by 40%, increased transparency by 60%, and reduced manual wor
                 key={`${title}-${index}`}
                 className="md:basis-1/2 lg:basis-1/3 px-4"
               >
-                {renderCard(project, index)}
+                {renderCard(project)}
               </CarouselItem>
             ))}
           </CarouselContent>
