@@ -22,47 +22,45 @@ export default function NavBar() {
               <Link href="#AboutMe">About</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink>
+              <Link href="#project">Project</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+
+          {/* <BreadcrumbSeparator />
+
+          <BreadcrumbItem>
+            <BreadcrumbLink>
+              <Link href="#">Services</Link>
+            </BreadcrumbLink>
+          </BreadcrumbItem> */}
 
           <BreadcrumbSeparator />
 
           <BreadcrumbItem>
             <BreadcrumbLink>
-              <Link href="/components">Services</Link>
+              <Link href="#experience">Experience</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbSeparator />
 
- <BreadcrumbItem>
+          <BreadcrumbItem>
             <BreadcrumbLink>
-              <Link href="/components">Experience</Link>
+              <Link href="#skills">Skills</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
 
-<BreadcrumbSeparator />
-
-<BreadcrumbItem>
-            <BreadcrumbLink>
-              <Link href="/components">Skills</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-
-<BreadcrumbSeparator />
-
-<BreadcrumbItem>
-            <BreadcrumbLink>
-              <Link href="/components">Project</Link>
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-
-<BreadcrumbSeparator />
+          <BreadcrumbSeparator />
 
           <BreadcrumbItem>
-          <BreadcrumbLink>
-             <Link href="/components">Contact</Link>
-           </BreadcrumbLink>
+            <BreadcrumbLink>
+              <Link href="#contact">Contact</Link>
+            </BreadcrumbLink>
           </BreadcrumbItem>
-          
+
         </BreadcrumbList>
       </Breadcrumb>
     </div>

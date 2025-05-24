@@ -9,81 +9,124 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { desc } from "framer-motion/client";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const { theme } = useTheme();
+
   interface Project {
     title: string;
     description?: string;
     image?: string;
     link?: string;
   }
+
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   const webProjects = [
     {
       title: "Pragati Track",
       description: `Designed and built Admin and Investigator panels for managing S&T and R&D projects under the Ministry
 of Coal & CMPDI. Orchestrated the integration of multi-level approvals and real-time dashboards, cutting decision time by 30% and enabling financial tracking for 1000+ projects.
 Enhanced execution by 40%, increased transparency by 60%, and reduced manual work by up to 80%.`,
-      image:
-        "/pragatiTrack.png",
+      image: "/pragatiTrack.png",
       link: "#",
     },
     {
       title: "YourHR",
-      description: `
-      Engineered an AI agent using LLMs to auto-generate Python data cleanup and validation functions.
-      Boosted data processing accuracy and cut manual coding effort by 70%.`,
-      image:
-        "./yourHR.png",
+      description: `Engineered an AI agent using LLMs to auto-generate Python data cleanup and validation functions.
+Boosted data processing accuracy and cut manual coding effort by 70%.`,
+      image: "./yourHR.png",
       link: "#",
     },
     {
       title: "Iv8.Tog",
-      description: `
-        Created a system to streamline the open-source contribution process by recommending GitHub repositoriesbased on users’ skills and experience.
-        Simplified discovering and contributing to relevant projects by 40%, saving developers over 45% of their time.
-      `,
-      image:
-        "./iv8.png",
+      description: `Created a system to streamline the open-source contribution process by recommending GitHub repositories based on users’ skills and experience.
+Simplified discovering and contributing to relevant projects by 40%, saving developers over 45% of their time.`,
+      image: "./iv8.png",
       link: "#",
     },
     {
       title: "Inventory-Management",
-      description: `
-      Automated inventory management for municipal corporations, reduced manual work by 70%..
-      Optimized real-time inventory tracking and shelf-life monitoring across 20+ departments, improving accuracy by 35% and streamlining role-based permission management`,
+      description: `Automated inventory management for municipal corporations, reduced manual work by 70%.
+Optimized real-time inventory tracking and shelf-life monitoring across 20+ departments, improving accuracy by 35% and streamlining role-based permission management.`,
       image:
         "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       link: "#",
     },
+    {
+      title: "Emoji.io",
+      description: "update soon",
+      image:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "#",
 
-    { title: "Emoji.io" },
-    { title: "Grow (Ecommers-App)" },
-    { title: "QR-code-generator" },
-    { title: "Amazon-Clone" },
-    { title: "Flix Movie App" },
-    { title: "chucknorris_jokes" },
+    },
+    {
+      title: "Grow (Ecommers-App)",
+      description: "update soon",
+      image:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "#",
+    },
+    {
+      title: "QR-code-generator",
+      description: "update soon",
+      image:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "#",
+    },
+    {
+      title: "Amazon-Clone",
+      description: "update soon",
+      image:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "#",
+    },
+    {
+      title: "Flix Movie App",
+      description: "update soon",
+      image:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "#",
+    },
+    {
+      title: "chucknorris_jokes",
+      description: "update soon",
+      image:
+        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      link: "#",
+    },
   ];
+
   const aiMlProjects = [
     {
       title: "AI Agent Function Generator",
-      description: `
-      Engineered an AI agent using LLMs to auto-generate Python data cleanup and validation functions.
-      Boosted data processing accuracy and cut manual coding effort by 70%.`,
+      description: `Engineered an AI agent using LLMs to auto-generate Python data cleanup and validation functions.
+Boosted data processing accuracy and cut manual coding effort by 70%.`,
       image:
         "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       link: "#",
     },
     {
-      title: " Movie Recommendation System",
-      description: `
-      Implemented a system suggesting movies based on user-selected preferences including genre, ratings, and metadata.
-      Elevated user satisfaction scores by 30% by delivering personalized movie recommendations`,
-      image:
-        "MovieRec.png",
+      title: "Movie Recommendation System",
+      description: `Implemented a system suggesting movies based on user-selected preferences including genre, ratings, and metadata.
+Elevated user satisfaction scores by 30% by delivering personalized movie recommendations.`,
+      image: "MovieRec.png",
       link: "#",
-    }
+    },
   ];
 
   const renderCard = (project: Project) => {
@@ -125,22 +168,31 @@ Enhanced execution by 40%, increased transparency by 60%, and reduced manual wor
   };
 
   const renderCarousel = (title: string, projects: Project[]) => (
-    <div className="mb-16">
+    <div className="mb-10">
       <h1 className="pl-6 sm:pl-28 font-glacial font-bold text-3xl sm:text-4xl p-6 text-green-400 bg-clip-text">
         {title}
       </h1>
       <div className="flex justify-center items-center">
         <Carousel opts={{ align: "start" }} className="w-[90%] h-[30rem]">
-          <CarouselContent>
-            {projects.map((project, index) => (
-              <CarouselItem
-                key={`${title}-${index}`}
-                className="md:basis-1/2 lg:basis-1/3 px-4"
-              >
-                {renderCard(project)}
-              </CarouselItem>
-            ))}
-          </CarouselContent>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <CarouselContent>
+              {projects.map((project, index) => (
+                <CarouselItem
+                  key={`${title}-${index}`}
+                  className="md:basis-1/2 lg:basis-1/3 px-4"
+                >
+                  <motion.div variants={cardVariants}>
+                    {renderCard(project)}
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </motion.div>
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
@@ -153,7 +205,7 @@ Enhanced execution by 40%, increased transparency by 60%, and reduced manual wor
       className={cn(
         "relative overflow-hidden min-h-screen font-glacial flex flex-col justify-center",
         theme === "dark"
-          ? "bg-gradient-to-b from-black to-transparent"
+          ? "bg-gradient-to-b from-black/50 to-transparent"
           : "bg-gradient-to-b from-white to-transparent"
       )}
     >
