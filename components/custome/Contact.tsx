@@ -8,7 +8,7 @@ export default function Contact() {
     return (
         <div>
             <hr />
-            <footer className="relative w-full bg-black text-white py-16 px-6 sm:px-20 overflow-hidden font-glacial">
+            <footer className="relative w-full dark:bg-black bg-white text-white py-12 px-4 sm:px-10 md:px-20 overflow-hidden font-glacial">
 
                 {/* 🔳 Grid Background */}
                 <GridPattern
@@ -25,13 +25,13 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center text-green-400 mb-10"
+                    className="text-3xl sm:text-4xl font-bold text-center text-green-400 mb-10"
                 >
                     Let's Connect
                 </motion.h2>
 
                 {/* 📬 Contact Details */}
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-base">
+                <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 text-sm sm:text-base">
                     <ContactItem
                         icon={<FaEnvelope />}
                         text="rushikeshwayal6@gmail.com"
@@ -55,7 +55,7 @@ export default function Contact() {
                 </div>
 
                 {/* 👣 Footer Bottom */}
-                <div className="mt-12 text-center text-sm text-gray-400">
+                <div className="mt-10 text-center text-xs sm:text-sm text-gray-400">
                     © {new Date().getFullYear()} Rushikesh Wayal. All rights reserved.
                 </div>
             </footer>
@@ -79,10 +79,10 @@ function ContactItem({
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-gray-700 transition"
+            className="flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 px-4 py-3 rounded-lg border border-gray-700 transition min-w-[250px] justify-center"
         >
-            <span className="text-green-400 text-xl">{icon}</span>
-            <span>{text}</span>
+            <span className="text-green-400 text-lg sm:text-xl">{icon}</span>
+            <span className="truncate">{text}</span>
         </motion.a>
     );
 }

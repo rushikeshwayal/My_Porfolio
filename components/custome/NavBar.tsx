@@ -13,8 +13,8 @@ import {
 
 export default function NavBar() {
   return (
-    <div className='border-[2px]   border-white px-8 py-2 rounded-3xl top-5 fixed z-50'>
-      <Breadcrumb>
+    <div className='border-[2px] border-white sm:px-8 sm:py-2 px-4 py-2 backdrop-blur-md dark:bg-white/10 bg-black/10  text-sm sm: font-xl rounded-3xl top-5 fixed z-50'>
+      <Breadcrumb className='text-white'>
         <BreadcrumbList>
           <BreadcrumbItem>
 
@@ -30,7 +30,6 @@ export default function NavBar() {
           </BreadcrumbItem>
 
           {/* <BreadcrumbSeparator />
-
           <BreadcrumbItem>
             <BreadcrumbLink>
               <Link href="#">Services</Link>
@@ -49,12 +48,11 @@ export default function NavBar() {
 
           <BreadcrumbItem>
             <BreadcrumbLink>
-              <Link href="#skills">Skills</Link>
+              <Link href="skill">Skills</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
 
           <BreadcrumbSeparator />
-
           <BreadcrumbItem>
             <BreadcrumbLink>
               <Link href="#contact">Contact</Link>

@@ -85,7 +85,7 @@ export default function Skills() {
     return (
         <div
             className={cn(
-                "relative flex justify-center items-center flex-col px-6 sm:px-28 font-glacial min-h-screen",
+                "relative flex justify-center items-center flex-col px-6 sm:px-28 font-glacial min-h- pb-20",
                 theme === "dark"
                     ? "bg-gradient-to-b from-transparent to-black/80"
                     : "bg-gradient-to-b from-white to-gray-100"

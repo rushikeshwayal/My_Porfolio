@@ -38,9 +38,7 @@ export default function Projects() {
   const webProjects = [
     {
       title: "Pragati Track",
-      description: `Designed and built Admin and Investigator panels for managing S&T and R&D projects under the Ministry
-of Coal & CMPDI. Orchestrated the integration of multi-level approvals and real-time dashboards, cutting decision time by 30% and enabling financial tracking for 1000+ projects.
-Enhanced execution by 40%, increased transparency by 60%, and reduced manual work by up to 80%.`,
+      description: `Designed and built Admin and Investigator panels for managing S&T and R&D projects under the Ministry of Coal & CMPDI. Orchestrated the integration of multi-level approvals and real-time dashboards and reduced manual work by up to 80%.`,
       image: "/pragatiTrack.png",
       link: "#",
     },
@@ -105,9 +103,6 @@ Optimized real-time inventory tracking and shelf-life monitoring across 20+ depa
     {
       title: "chucknorris_jokes",
       description: "update soon",
-      image:
-        "https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      link: "#",
     },
   ];
 
@@ -132,7 +127,7 @@ Elevated user satisfaction scores by 30% by delivering personalized movie recomm
   const renderCard = (project: Project) => {
     if (project.description && project.image) {
       return (
-        <div className="flex flex-col bg-white dark:bg-black shadow-xl border border-slate-200 dark:border-slate-700 rounded-lg w-full h-[28rem] p-4">
+        <div className="flex flex-col bg-white dark:bg-black shadow-xl border border-slate-200 dark:border-slate-700 rounded-lg w-full h-[30rem] p-4">
           <div className="h-44 overflow-hidden rounded-md mb-4 flex-shrink-0">
             <img
               src={project.image}
@@ -203,7 +198,7 @@ Elevated user satisfaction scores by 30% by delivering personalized movie recomm
   return (
     <div
       className={cn(
-        "relative overflow-hidden min-h-screen font-glacial flex flex-col justify-center",
+        "relative overflow-hidden min-h-screen font-glacial flex flex-col justify-center sm:px-18 px-10 ",
         theme === "dark"
           ? "bg-gradient-to-b from-black/50 to-transparent"
           : "bg-gradient-to-b from-white to-transparent"
