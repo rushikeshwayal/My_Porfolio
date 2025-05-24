@@ -13,7 +13,7 @@ import {
 
 export default function NavBar() {
   return (
-    <div className='border-[2px]   border-white px-8 py-2 rounded-3xl top-5 fixed'>
+    <div className='border-[2px]   border-white px-8 py-2 rounded-3xl top-5 fixed z-50'>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>

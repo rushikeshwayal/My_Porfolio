@@ -1,10 +1,15 @@
+"use client"
 import { NumberTicker } from "../magicui/number-ticker";
 import { GridPattern } from "../ui/grid-pattern";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 export default function NumberCount() {
+    const {theme} = useTheme();
 
     return (    
-        <div className="relative overflow-hidden font-glacial h-96 bg-gradient-to-t from-black  to-transparent">
+        <div className={cn("relative overflow-hidden font-glacial h-96",
+        theme === "dark" ? "bg-gradient-to-t from-black  to-transparent" : "bg-gradient-to-t from-white to-transparent" // Change background color dynamically
+        )}>
             <div className="flex justify-around items-center  text-center w-full">
                 <div>
                 <p

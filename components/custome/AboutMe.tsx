@@ -3,14 +3,21 @@
 import Image from 'next/image';
 import me from '../../public/meeee.png';
 import X from '../../public/logo.svg';
+import X_Black from '../../public/X-black.png';
 import youtubeLogo from '../../public/youtube-6.svg';
 import githubLogo from '../../public/github-mark-white.svg';
+import Git_Black from '../../public/github_black.svg';
 import linkedinLogo from '../../public/linkedin-icon-2.svg';
 import { motion } from 'framer-motion';
+import { cn } from "@/lib/utils";
+import { useTheme } from 'next-themes';
 
 export default function AboutMe() {
+  const { theme } = useTheme();
   return (
-    <div id='AboutMe' className='flex flex-col md:flex-row justify-center items-center min-h-screen bg-black text-white p-8 font-glacial'>
+    <div id='AboutMe' className={
+      cn("flex flex-col md:flex-row justify-center items-center min-h-screen bg-black text-white p-8 font-glacial",
+        theme === "dark" ? "bg-black text-white " : "bg-white text-black")}>
       {/* Image Section */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
@@ -43,11 +50,10 @@ export default function AboutMe() {
           Building beyond boundaries, transforming ideas into incredible realities.
         </p>
         <p className="text-base sm:text-lg text-gray-400 mb-8">
-        I am passionate about creating innovative solutions
-and continuously exploring new technologies.
-Proficient in multiple programming languages and
-frameworks, I aim to leverage my skills to contribute to
-impactful projects and further my learning in the field.  </p>
+          Developer experienced in designing and delivering innovative software solutions using a broad set of program
+          ming languages and frameworks. Successfully built and deployed projects that improved process efficiency by
+          up to 80%, reduced manual work, and streamlined workflows. Adept at collaborating in team environments
+          and rapidly adopting new technologies to meet project goals  </p>
 
         {/* Social Icons */}
         <motion.div
@@ -58,7 +64,8 @@ impactful projects and further my learning in the field.  </p>
           className="flex justify-center md:justify-start space-x-6"
         >
           <a href="https://github.com/rushikeshwayal" target="_blank" rel="noopener noreferrer">
-            <Image src={githubLogo} alt="github" width={32} height={32} className="hover:opacity-75 transition-opacity" />
+            <Image src={theme === "dark" ? githubLogo : Git_Black} alt="github" width={32} height={32} className="hover:opacity-75 transition-opacity" />
+            {/* <Image src={githubLogo} alt="github" width={32} height={32} className="hover:opacity-75 transition-opacity" /> */}
           </a>
           <a href="https://www.linkedin.com/in/rushikeshwayal/" target="_blank" rel="noopener noreferrer">
             <Image src={linkedinLogo} alt="linkedin" width={32} height={32} className="hover:opacity-75 transition-opacity" />
@@ -67,7 +74,7 @@ impactful projects and further my learning in the field.  </p>
             <Image src={youtubeLogo} alt="youtube" width={32} height={32} className="hover:opacity-75 transition-opacity" />
           </a>
           <a href="https://x.com/Rushikesh_7_11" target="_blank" rel="noopener noreferrer">
-            <Image src={X} alt="X" width={28} height={28} className="hover:opacity-75 transition-opacity" />
+            <Image src={theme == "dark" ? X : X_Black} alt="X" width={26} height={26} className="hover:opacity-75 transition-opacity" />
           </a>
         </motion.div>
       </motion.div>
